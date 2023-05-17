@@ -39,7 +39,8 @@
 
 - A Class `person.rb` that has Instance variables: @id, @name, and @age.
 - A Class `Student.rb` that has Inherits from Person
-- A Class `teacher.rb` thas has Inherits from Person and Constructor extends parent's constructor by adding @specialization and a parameter for it.
+- A Class `teacher.rb` that has Inherits from Person and Constructor extends parent's constructor by adding @specialization and a parameter for it.
+- A class `TrimmerDecorator` that inherits from the base Decorator class.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

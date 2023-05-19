@@ -1,5 +1,6 @@
 require_relative 'student'
 require_relative 'book'
+require_relative 'teacher'
 require_relative 'rental'
 
 class App
@@ -18,8 +19,8 @@ class App
     end
   end
 
-  def create_teacher(age, specialization, name, parent_permission)
-    @peoples << Teacher.new(age, specialization, name: name, parent_permission: parent_permission)
+  def create_teacher(age, specialization, name)
+    @peoples << Teacher.new(age, specialization, name: name)
   end
 
   def create_student(age, name, parent_permission)

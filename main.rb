@@ -13,27 +13,51 @@ end
 
 # def create_student
 
+# def create_person(app)
+#   puts 'Do you want to create a student(1) or a teacher(2)? [Input the number]:-'
+#   option = gets.chomp
+#   parent_permission = true
+#   puts 'age:-'
+#   age = gets.chomp.to_i
+#   puts 'name:-'
+#   name = gets.chomp
+#   puts 'Has parent permission?[Y/N]'
+#   val = gets.chomp
+#   parent_permission = false if %w[N n NO no No].include?(val)
+
+#   case option.to_i
+#   when 1
+#     app.create_student(age, name, parent_permission)
+#   when 2
+#     puts 'specialization:-'
+#     specialization = gets.chomp
+#     app.create_teacher(age, specialization, name, parent_permission)
+#   else
+#     puts 'Invalid input ):'
+#   end
+# end
+
 def create_person(app)
-  puts 'Do you want to create a student(1) or a teacher(2)? [Input the number]:-'
+  puts 'Do you want to create a student(1) or a teacher(2)? [Input the number]:'
   option = gets.chomp
   parent_permission = true
-  puts 'age:-'
+  puts 'age:'
   age = gets.chomp.to_i
-  puts 'name:-'
+  puts 'name:'
   name = gets.chomp
-  puts 'Has parent permission?[Y/N]'
-  val = gets.chomp
-  parent_permission = false if %w[N n NO no No].include?(val)
 
   case option.to_i
   when 1
+    puts 'Has parent permission?[Y/N]'
+    val = gets.chomp
+    parent_permission = false if %w[N n NO no No].include?(val)
     app.create_student(age, name, parent_permission)
   when 2
-    puts 'specialization:-'
+    puts 'specialization:'
     specialization = gets.chomp
-    app.create_teacher(age, specialization, name, parent_permission)
+    app.create_teacher(age, specialization, name)
   else
-    puts 'Invalid input ):'
+    puts 'Invalid input :('
   end
 end
 

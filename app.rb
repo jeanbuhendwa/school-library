@@ -27,6 +27,16 @@ class App
     @peoples << Student.new(age, name: name, parent_permission: parent_permission)
   end
 
+    # Create a book based on user inputs
+    def create_book(title, author)
+      @books << Book.new(title, author)
+    end
+  
+    # Create a rental based on user input
+    def create_rental(book_index, person_index, date)
+      Rental.new(@books[book_index], @peoples[person_index], date)
+    end
+
   def list_person_rentals(person_id)
     @peoples.each do |person|
       if person.id == person_id

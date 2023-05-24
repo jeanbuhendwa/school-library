@@ -78,6 +78,12 @@ To run the project, execute the following command:
 - Twitter: [@jeanbuhendwa](https://twitter.com/jeanjacqueI)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/johnbuhendwa/)
 
+👤 **Winnie Edube**
+
+- GitHub: [@edubew](https://github.com/edubew)
+- Twitter: [@edube_winne](https://twitter.com/edube_winne)
+- LinkedIn: [Winfred Edube](https://www.linkedin.com/in/winfred-edube/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>

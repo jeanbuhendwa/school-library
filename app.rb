@@ -27,25 +27,13 @@ class App
     @peoples << Student.new(age, name: name, parent_permission: parent_permission)
   end
 
-  def create_book
-    puts 'Title:-'
-    title = gets.chomp
-    puts 'Author:-'
-    author = gets.chomp
+  # Create a book based on user inputs
+  def create_book(title, author)
     @books << Book.new(title, author)
   end
 
-  def create_rental
-    puts 'Select a book from the following list by number'
-    @books.each.with_index { |book, idx| puts "#{idx}) Book #{book.title} by #{book.author}" }
-    book_index = gets.chomp.to_i
-    puts 'Select a person from the following list by number(not ID)'
-    @peoples.each.with_index do |person, idx|
-      puts "#{idx}) [#{person.class.name}] Name #{person.name}, ID #{person.id}, Age #{person.age}"
-    end
-    person_index = gets.chomp.to_i
-    puts 'Date:-'
-    date = gets.chomp
+  # Create a rental based on user input
+  def create_rental(book_index, person_index, date)
     Rental.new(@books[book_index], @peoples[person_index], date)
   end
 

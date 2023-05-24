@@ -11,12 +11,13 @@ class App
 
   def initialize
     @books = LoadData.read_books
-    @peoples = []
+    @peoples = LoadData.read_people
   end
 
   # Save data into file
   def save
     SaveData.save_books(@books)
+    SaveData.save_people(@peoples)
   end
 
   def list_all_books
@@ -25,9 +26,10 @@ class App
 
   def list_all_peoples
     @peoples.each do |people|
-      puts "[#{people.class.name}] Name:- #{people[:name]} ID:- #{people[:id]} Age:- #{people[:age]} \n"
+      puts "[#{people.class.name}] Name:- #{people.name} ID:- #{people.id} Age:- #{people.age} \n"
     end
   end
+  
 
   def create_teacher(age, specialization, name)
     @peoples << Teacher.new(age, specialization, name: name)

@@ -1,12 +1,22 @@
+require 'json'
+require_relative 'load_data'
+require_relative 'save_data'
 require_relative 'student'
 require_relative 'book'
 require_relative 'teacher'
 require_relative 'rental'
 
 class App
+  attr_accessor :books
+
   def initialize
-    @books = []
+    @books = LoadData.read_books
     @peoples = []
+  end
+
+  # Save data into file
+  def save
+    SaveData.save_books(@books)
   end
 
   def list_all_books
@@ -15,7 +25,7 @@ class App
 
   def list_all_peoples
     @peoples.each do |people|
-      puts "[#{people.class.name}] Name:- #{people.name} ID:- #{people.id} Age:- #{people.age} \n"
+      puts "[#{people.class.name}] Name:- #{people[:name]} ID:- #{people[:id]} Age:- #{people[:age]} \n"
     end
   end
 

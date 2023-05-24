@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require_relative 'app'
 
 class Functions
@@ -93,6 +95,7 @@ def main
       app.list_all_peoples
     else
       status = functions.handle_option(option, app)
+      app.save #Save data after each operation
     end
   end
 end

@@ -16,5 +16,19 @@ class LoadData
           load_books
         end
       end
+
+      def self.read_people
+        return [] unless File.exist?('people.json')
+        File.open('people.json') do |file|
+          available_people = file.read
+          json_people = JSON.parse(available_people)
+          load_people = []
+          json_people.each do |person|
+            new_person = Person.new(person['age'], name: person['name'], parent_permission: person['parent_permission'])
+            load_people << new_person
+          end
+          load_people
+        end
+      end
       
 end

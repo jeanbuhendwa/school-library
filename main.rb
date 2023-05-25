@@ -86,6 +86,7 @@ def main
   status = true
   app = App.new
   functions = Functions.new
+
   while status
     list_option
     option = gets.chomp.to_i
@@ -98,6 +99,7 @@ def main
       app.save #Save data after each operation
     end
   end
+  app.save
 end
 
 main

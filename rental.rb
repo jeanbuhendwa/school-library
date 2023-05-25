@@ -10,4 +10,8 @@ class Rental
     @person = person
     person.rentals << self
   end
+
+  def details
+    "Book: #{@book.title} by #{@book.author}\nPerson: Unknown\nDate: #{@date}"
+  end
 end

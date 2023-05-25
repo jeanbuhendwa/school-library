@@ -5,7 +5,7 @@ require_relative 'rental'
 
 class Person < Nameable
   attr_accessor :name, :age, :rentals
-  attr_reader :id
+  attr_reader :id, :parent_permission
 
   def initialize(age, name: 'Unknown', parent_permission: true)
     super()
@@ -24,10 +24,6 @@ class Person < Nameable
     @name
   end
 
-  def parent_permission 
-    @parent_permission
-  end
-  
   def can_use_services?
     of_age || @parent_permission
   end

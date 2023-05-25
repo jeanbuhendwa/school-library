@@ -31,7 +31,6 @@ class App
       puts "[#{people.class.name}] Name:- #{people.name} ID:- #{people.id} Age:- #{people.age} \n"
     end
   end
-  
 
   def create_teacher(age, specialization, name)
     @peoples << Teacher.new(age, specialization, name: name)
@@ -41,7 +40,7 @@ class App
     @peoples << Student.new(age, name: name, parent_permission: parent_permission)
   end
 
-  def get_all_rentals
+  def all_rentals
     rentals = []
     @peoples.each { |person| rentals.concat(person.rentals) }
     rentals

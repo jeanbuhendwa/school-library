@@ -31,4 +31,24 @@ class LoadData
         end
       end
       
+      def self.read_rentals(books, people)
+        return [] unless File.exist?('rentals.json')
+    
+        File.open('rentals.json') do |file|
+          available_rentals = file.read
+          json_rentals = JSON.parse(available_rentals)
+          load_rentals = []
+    
+          json_rentals.each do |rental|
+            book = books.find { |b| b.title == rental['book_title'] && b.author == rental['book_author'] }
+            person = people.find { |p| p.name == rental['person_name'] && p.id == rental['person_id'] }
+            next unless book && person
+    
+            new_rental = Rental.new(book, person, rental['date'])
+            load_rentals << new_rental
+          end
+    
+          load_rentals
+        end
+      end
 end

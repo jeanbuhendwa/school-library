@@ -25,7 +25,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Enumerable Ruby] <a name="about-project"></a>
+# 📖 [School Library] <a name="about-project"></a>
 
 **[School Library]** is an app built with Ruby.
 

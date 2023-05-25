@@ -84,6 +84,7 @@ def main
   status = true
   app = App.new
   functions = Functions.new
+
   while status
     list_option
     option = gets.chomp.to_i
@@ -95,6 +96,7 @@ def main
       status = functions.handle_option(option, app)
     end
   end
+  app.save
 end
 
 main

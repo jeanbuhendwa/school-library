@@ -19,7 +19,7 @@ class App
   def save
     SaveData.save_books(@books)
     SaveData.save_people(@peoples)
-    SaveData.save_rentals(get_all_rentals)
+    SaveData.save_rentals(all_rentals)
   end
 
   def list_all_books

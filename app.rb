@@ -19,7 +19,7 @@ class App
   def save
     SaveData.save_books(@books)
     SaveData.save_people(@peoples)
-    SaveData.save_rentals(get_all_rentals)
+    SaveData.save_rentals(all_rentals)
   end
 
   def list_all_books
@@ -40,7 +40,7 @@ class App
     @peoples << Student.new(age, name: name, parent_permission: parent_permission)
   end
 
-  def get_all_rentals
+  def all_rentals
     rentals = []
     @peoples.each { |person| rentals.concat(person.rentals) }
     rentals
